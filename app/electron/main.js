@@ -497,7 +497,7 @@ const initMainWindow = () => {
     });
 
     // 菜单
-    const productName = "SiYuan";
+    const productName = "Sumi";
     const template = [{
         label: productName, submenu: [{
             label: `About ${productName}`, role: "about",
