@@ -570,7 +570,9 @@ func setSyncEnable(c *gin.Context) {
 	if !ok {
 		return
 	}
-
+    
+	_ = arg // 👈 加上这一行：消耗掉 arg 变量，让编译器闭嘴
+	
 	// enabled := arg["enabled"].(bool) // 这行可以注释掉，不听前端的
     model.SetSyncEnable(false)         // 强制设为 false
     return                             // 直接结束

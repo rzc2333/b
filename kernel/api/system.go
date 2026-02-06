@@ -816,7 +816,9 @@ func exit(c *gin.Context) {
 	if nil != setCurrentWorkspaceArg {
 		setCurrentWorkspace = setCurrentWorkspaceArg.(bool)
 	}
-
+    
+	_ = execInstallPkg // 👈 加上这一行，告诉编译器：我知道这个变量存在，我看到它了。
+	
 	exitCode := model.Close(force, setCurrentWorkspace, 1) // 1 表示不执行新版本安装
 	ret.Code = exitCode
 	switch exitCode {
